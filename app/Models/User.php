@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Carbon;
 
 class User extends Authenticatable
 {
@@ -35,6 +36,37 @@ class User extends Authenticatable
         'is_role',
         'phone'
     ];
+
+    /**
+     * User has many courses, if user create a course
+     */
+    public function courses()
+    {
+        return $this->hasMany(Course::class, "instructor", "id");
+    }
+
+    public function getWithRelationsAttribute()
+    {
+        $this->load('courses.courseModules.contents',);
+        return $this;
+    }
+
+    // here creatd_at  is a custom attribute that returns the created at date in human readable format.
+    // but, my database  column name for this field is "created_at" not "createdAtt". so i used accessor
+    /**
+     * ACCESSOR
+     * Get the value of `created_at` as a Carbon instance.
+     */
+    public function getCreatedAtAttribute($date): string
+    {
+        return Carbon::parse($date)->format("M d, Y");
+    }
+    public function getUpdatedAtAttribute($date): string
+    {
+        return Carbon::parse($date)->format("M d, Y");
+        // Carbon::
+    }
+
 
     /**
      * The attributes that should be hidden for serialization.

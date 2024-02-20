@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Validate;
 
 class Login extends Component
@@ -23,6 +24,7 @@ class Login extends Component
 
     public function login()
     {
+        // Cache::get();
         $credentials = $this->validate([
             'email' => 'required|email',
             'password' => 'required',
