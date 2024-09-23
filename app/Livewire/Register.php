@@ -14,6 +14,7 @@ class Register extends Component
     public $name;
     public $email;
     public $password;
+    public $password_confirm;
 
     //make agree
     public function makeAgree()
@@ -26,7 +27,7 @@ class Register extends Component
         $this->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|min:8|confirmed',
+            'password' => 'required|min:8',
         ]);
 
         // if ($validator->fails()) {
@@ -42,9 +43,10 @@ class Register extends Component
 
         // event(new Registered($user));
 
-        Auth::login($user);
+        Auth::login($user, true);
 
-        return redirect()->intended('/dashboard');
+        // return redirect()->intended('/dashboard');
+        $this->redirectIntended("/dashboard", navigate: true);
     }
 
     public function render()

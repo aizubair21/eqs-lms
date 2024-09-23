@@ -2,10 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-[x-cloak] {
-    display: none;
+
+:root {
+    --brand-dark: rgb(13, 105, 52);
+    --brand-primary: rgb(34, 194, 107);
+    --brand-light: rgb(193, 229, 209);
+    --brand-lightgray: #f9f9f9;
+    --brand-gray: #ececec;
+    --gray: gray;
+    --brand-white: #fff;
+    --brand-black: #000;
+    --brand-radious: 8px;
+    --brand-border-color: rgb(234.234, 234);
 }
 
 body {
-    background-color: darkgray !important;
+    background-color: var(--brand-gray) !important;
+    width: 100%;
+    height: 100%;
 }
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+aside {
+    /* background-color: rgb(211, 236, 211); */
+    background-color: var(--brand-lightgray) !important;
+    color: #0d0d0d;
+    height: 100vh;
+    border-right: 1px solid var(--brand-gray);
+    box-shadow: 0px 0px 20px var(--brand-gray);
+}
+
+/* nav {
+    background-color: var(--brand-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.navbar-nav {
+    background-color: var(--brand-lightgray);
+}
+
+.navbar-nav .nav-link {
+    color: #0d0d0d !important;
+    font-weight: 400;
+}
+
+.nav-treeview {
+    margin-left: 15px !important;
+}
+
+nav .nav-pills .nav-item .nav-link {
+    transition: all linear .3s;
+    /* color: var(--brand-white) !important; */
+    /* font-weight: 300; */
+}
+
+nav .nav-pills .nav-item .nav-link:hover {
+    color: var(--brand-black) !important;
+    /* padding-left: 30px; */
+    transition: all linear .3s;
+    font-weight: 400;
+}
+
+nav .nav-pills .nav-treeview .nav-link:hover:not(active) {
+    color: var(--brand-black) !important;
+    /* padding-left: 25px; */
+    transition: all linear .3s;
+}
+
+nav .nav-pills .nav-treeview .nav-link.active {
+    /* background-color: var(--brand-gray) !important; */
+    color: var(--brand-dark) !important;
+    padding-left: 25px;
+    border-radius: 0px;
+    font-weight: 500;
+}
+
+nav .nav-pills .nav-link.active {
+    background-color: inherit;
+    color: var(--brand-black);
+}
+
+nav .nav-pills .nav-link.active p {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+nav .nav-pills .nav-treeview .nav-link.active p {
+    font-size: 15px;
+    font-weight: 500 !important;
+}
+
+.page_nav_active {
+    background-color: var(--brand-gray) !important;
+    color: var(--brand-black) !important;
+    font-weight: 600;
+}
+
+
+.nav-item {
+    color: var(--brand-black) !important;
+}
+
+label {
+    font-size: 16px !important;
+    border-radius: 25px;
+    /* background: linear-gradient(90deg, var(--brand-dark), transparent);
+    width: 100%;
+    padding: 10px auto; */
+    border-left: .5px solid var(--brand-dark);
+    padding-right: 15px;
+}
+
+/* .nav-link {
+    color: var(--brand-primary) !important;
+} */

@@ -19,7 +19,9 @@ use Livewire\Features\SupportFormObjects\HandlesFormObjects;
 
 abstract class Component
 {
-    use Macroable { __call as macroCall; }
+    use Macroable {
+        __call as macroCall;
+    }
 
     use AuthorizesRequests;
     use InteractsWithProperties;
@@ -84,7 +86,8 @@ abstract class Component
             if (isset($value)) {
                 return true;
             }
-        } catch(PropertyNotFoundException $ex) {}
+        } catch (PropertyNotFoundException $ex) {
+        }
 
         return false;
     }
@@ -134,7 +137,9 @@ abstract class Component
         }
 
         throw new BadMethodCallException(sprintf(
-            'Method %s::%s does not exist.', static::class, $method
+            'Method %s::%s does not exist.',
+            static::class,
+            $method
         ));
     }
 

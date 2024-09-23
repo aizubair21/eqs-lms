@@ -17,17 +17,20 @@ class course_module extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        "id",
+
         "title",
-        "name",
         "type",
+        "type_icon",
         "course_id",
+        "batch_id",
+
         "created_at",
         "updated_at",
+
     ];
 
 
-    /**
+    /**  
      * course module cotent has belongs to course moule.
      */
     public function course()

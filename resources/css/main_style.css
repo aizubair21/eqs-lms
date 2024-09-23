@@ -1,23 +1,112 @@
-
-
-:root {
-    --brand-dark-green: #0D6934;
-    --brand-green:#22C26B;
-    --brand-white: #fff;
-    --brand-black: #000;
-    --brand-blue:#64BBED;
-    --brand-body-bg:#FFFAED;
-    --brand-dark-red: #BD4444;
-    --brand-red:#FA6D6D;
-    --brand-yellow: #EBB25C;
-    --brand-dark-yellow: #B6863F;
-    
+body {
+    background-color: var(--brand-white) !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-size: 14px;
 }
 
-
 * {
-    font-family: 'Times New Roman', Times, serif;
     font-weight: 300;
+    box-sizing: border-box;
+}
+
+.text_dark {
+    color: var(--brand-dark) !important;
+}
+
+.text_primary {
+    color: var(--brand-primary) !important;
+}
+
+.text_lightgray {
+    color: var(--lightgray) !important;
+}
+
+.text_brand_gray {
+    color: var(--brand-gray) !important;
+}
+
+.text_gray {
+    color: var(--gray) !important;
+}
+
+.text_white {
+    color: var(--brand-white) !important;
+}
+
+.bg_dark {
+    background-color: var(--brand-dark) !important;
+}
+
+.bg_primary {
+    background-color: var(--brand-primary) !important;
+}
+
+.bg_light {
+    background-color: var(--brand-light) !important;
+}
+
+.bg_brand_gray {
+    background-color: var(--brand-gray) !important;
+}
+
+.bg_brand_lightgray {
+    background-color: var(--brand-lightgray) !important;
+}
+
+.bg_gray {
+    background-color: var(--gray) !important;
+}
+
+.bg_white {
+    background-color: var(--brand-white) !important;
+}
+
+.border_dark {
+    border: 1px solid var(--brand-dark)
+}
+
+.border_primary {
+    border: 1px solid var(--brand-primary)
+}
+
+.border_brand_gray {
+    border: 1px solid var(--brand-gray);
+}
+
+.border_white {
+    border: 1px solid var(--brand-white);
+}
+
+.border_black {
+    border: 1px solid var(--brand-black);
+}
+
+.border_round {
+    border-radius: var(--brand-radious);
+}
+
+.shadow_sm {
+    box-shadow: 0px 0px 10px var(--brand-gray);
+}
+
+.shadow_lg {
+    box-shadow: 10px 0px 15px var(--brand-gray);
+}
+
+.btn_primary {
+    background-color: var(--brand-primary);
+    color: var(--brand-white);
+}
+
+.btn_dark {
+    background-color: var(--brand-dark);
+    color: var(--brand-white);
+}
+
+.btn_default {
+    background-color: var(--brand-gray);
+    color: var(--brand-black);
 }
 
 h1,
@@ -27,16 +116,83 @@ h2,
     font-weight: 600;
 }
 
-label {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-    opacity: .7;
-    font-size: 15px;
+p {
+    font-size: 14px;
 }
 
-input,
+.nav-item {
+    font-size: 13px;
+}
+
+[type="text"],
+[type="number"],
+[type="email"],
+[type="date"],
+[type="time"],
+[type="file"],
+[type="password"],
+[type="search"],
+[type="datetime"],
+[multiple],
+textarea,
 select {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 300;
-    font-size: 14px !important;
+    border: 1px solid var(--brand-gray);
+    border-radius: 7px;
+    margin-bottom: 8px;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    border-color: var(-gray) !important;
+    width: 20px;
+    height: 20px;
+}
+
+[type="file"] {
+    padding: 7px !important;
+}
+
+[type="text"]:focus,
+[type="number"]:focus,
+[type="email"]:focus,
+[type="date"]:focus,
+[type="time"]:focus,
+[type="file"]:focus,
+[type="password"]:focus,
+[type="search"]:focus,
+[type="datetime"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+    outline: var(--brand-dark) !important;
+    border: 1px solid var(--brand-primary) !important;
+    box-shadow: none !important;
+}
+
+
+[type="checkbox"]:checked,
+[type="radio"]:checked {
+    background-color: var(--brand-dark) !important;
+    box-shadow: 0px 0px var(--brand-primary) !important;
+}
+
+[type="checkbox"]:focus,
+[type="radio"]:focus {
+    /* background-color: var(--brand-dark) !important; */
+    box-shadow: 0px 0px var(--brand-primary) !important;
+}
+
+.page_title {
+    font-size: 18px;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+
+
+.course_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin: 8px 0px;
 }

@@ -12,12 +12,18 @@ class moduleContent extends Model
     use HasFactory;
 
     protected $fillable = [
+        
         'module_id',
+        'batch_id',
         'title',
         'type',
+        "type_icon",
         'description',
         'content',
-        'status'        
+        'status',
+        'created_at',
+        'updated_at'
+
     ];
 
     public function Module()

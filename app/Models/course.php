@@ -20,19 +20,51 @@ class course extends Model
      */
     protected $fillable =
     [
-        "id",
-        "name",
-        "thumb",
-        "has_batch",
-        "category",
+        "title",
+        "slug",
+        "info",
         "description",
+
+        "has_batch",
+        "has_certificate",
+        "certificate_type",
+
+        "is_approve_cupon",
+        "cupon_start_at",
+        "cupon_end_at",
+
+        "price_type",
+        "price",
+        "regular_price",
+        "has_discount",
+        "discount_end_at",
+
+        "category",
         "feature",
         "target",
         "outcome",
+
         "instructor",
-        "type",
-        "slug",
-        "price",
+        "class_type",
+        "class_schedule",
+
+        "meta_title",
+        "meta_description",
+        "meta_keyword",
+        "meta_thumbnail",
+
+        "thumbnail_type",
+        "thumbnail",
+
+        "status",  //draft, trashed, published
+        "course_uid",
+
+        // enrollment
+        "can_anyone_enroll",
+        "payment_type",
+        "payment_details",
+
+        "on_editing_stage",
         "created_at",
         "updated_at",
 
@@ -106,8 +138,8 @@ class course extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        // 'created_at' => 'datetime',
-        // 'updated_at' => "datetime",
+        'created_at' => 'datetime',
+        'updated_at' => "datetime",
     ];
 
 

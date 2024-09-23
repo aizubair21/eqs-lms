@@ -25,16 +25,20 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'month',
-        'date',
-        'year',
-        'c_id',
-        'm_id',
-        'email',
-        'password',
-        'is_role',
-        'phone'
+
+        'username', //
+        'display_name',
+        'email', //
+        'phone', //
+        "password",
+        'profile_photo_path', // storage photo path
+        'profile_photo_url', //profile faker photo
+        'status', //0-> nothing, 1 -> active, 3 -> temporary banned, 4->banned on data, 2 -> draft
+        "remember_token", // 
+        "remember_me",
+        'email_verified_at', //
+        'temp_access_token',
+
     ];
 
     /**

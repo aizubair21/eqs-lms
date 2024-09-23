@@ -17,9 +17,10 @@ class Login extends Component
     // #[Validate('required')]
     public $email;
 
+
     public function render()
     {
-        return view('livewire.login');
+        return view('livewire.login')->extends("layouts.app");
     }
 
     public function login()
@@ -31,10 +32,11 @@ class Login extends Component
         ]);
 
         // $this->validate();
-        if (Auth::attempt($this->all())) {
+        if (Auth::attempt($this->all(), true)) {
             $this->reset();
             // Authentication was successful
-            return redirect()->intended('/dashboard');
+            // return redirect()->intended('/dashboard');
+            $this->redirectIntended("/", navigate: true);
         } else {
             // Authentication failed
             $this->addError('email', 'Invalid email or password');
